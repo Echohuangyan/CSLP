@@ -1,12 +1,6 @@
 # **CSLP: Collaborative Solution to Long-tailed Problem and Popularity Bias in Sequential Recommendation**
 
 
-
-## **Overview**  
-
-### Overall Framework  
-<img src="figure/Main.png" width="300">
-
 ### Abstract   
 
 Sequential recommender systems, leveraging the temporal information from users' behaviors, have noticeably improved user experience against traditional systems. 
