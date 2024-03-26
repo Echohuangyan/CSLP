@@ -29,7 +29,7 @@ class Trainer(embedder):
         set_random_seeds(self.args.seed)
         u_L_max = self.args.maxlen
         i_L_max = self.item_threshold + self.args.maxlen
-        self.model = MELT(self.args, self.logger, self.item_num, self.device, u_L_max, i_L_max).to(self.device)
+        self.model = CSLP(self.args, self.logger, self.item_num, self.device, u_L_max, i_L_max).to(self.device)
         self.inference_negative_sampler = NegativeSampler(self.args, self.dataset)
         
         # Build train, valid, test datasets
@@ -161,7 +161,7 @@ class Trainer(embedder):
         set_random_seeds(self.args.seed)
         u_L_max = self.args.maxlen
         i_L_max = self.item_threshold + self.args.maxlen
-        self.model = MELT(self.args, self.logger, self.item_num, self.device, u_L_max, i_L_max, True).to(self.device)
+        self.model = CSLP(self.args, self.logger, self.item_num, self.device, u_L_max, i_L_max, True).to(self.device)
         self.inference_negative_sampler = NegativeSampler(self.args, self.dataset)
         
         test_dataset = TestData_FMLP(self.args, None, self.train_data, self.test_data, self.valid_data, self.inference_negative_sampler)
@@ -414,12 +414,12 @@ class ITEMBRANCH(torch.nn.Module):
 
 
 
-class MELT(torch.nn.Module):
+class CSLP(torch.nn.Module):
     """
     Revision of SASRec model
     """
     def __init__(self, args, logger, item_num, device, u_L_max, i_L_max, test=False):
-        super(MELT, self).__init__()
+        super(CSLP, self).__init__()
         self.args = args
         self.logger = logger
         self.test = test
