@@ -27,7 +27,7 @@ We follow the same-preprocessing strategy with [SASRec](https://github.com/kang2
 
 ## **Library Versions**
 
-* Python: 3.9.12  
+* Python: 3.7.16  
 * Pytorch : 1.10  
 * Numpy: 1.21.2  
 * Pandas: 1.3.4  
