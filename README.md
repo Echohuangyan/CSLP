@@ -32,11 +32,6 @@ We follow the same-preprocessing strategy with [SASRec](https://github.com/kang2
 * Numpy: 1.21.2  
 * Pandas: 1.3.4  
 
-We upload the **environment.yaml** file to directly install the required packages.
-
-``` python  
-conda env create --file environment.yaml
-``` 
 
 ## **Training**
 
